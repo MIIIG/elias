@@ -5,7 +5,7 @@ require 'rack/test'
 Rspec.describe 'API' do
 	subject(:response) { get '/' }
 
-	include Rack::Test::Method
+	include Rack::Test::Methods
 	
 	let(:app) {}
 	
