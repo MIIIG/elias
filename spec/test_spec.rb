@@ -1,0 +1,18 @@
+# frozen_string_literal: true
+
+require 'rack/test'
+
+Rspec.describe 'API' do
+	subject(:response) { get '/' }
+
+	include Rack::Test::Method
+	
+	let(:app) {}
+	
+	specify do
+		expect(response.status).to eq 200
+		expect(response.body).to eq <<~JSON.strip
+			[{"id":1,"number":"ticket#1"},{"id":2,"number":"ticket#2"}]
+		JSON
+	end
+end
