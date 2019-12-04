@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'lib/elias/api/application'
+$LOAD_PATH.unshift(File.expand_path('lib', __dir__))
+
+require 'elias/api/application'
 
 run Elias::API::Application
